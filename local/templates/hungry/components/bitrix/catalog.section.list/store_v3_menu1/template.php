@@ -19,13 +19,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
  */
 
 $this->setFrameMode(true);
-$emptyImagePath = $this->getFolder().'/images/tile-empty.png';
-
 if ($arResult['SECTIONS_COUNT'] > 0)
 {
 	?>
-	<div class="catalog-sections-list-menu">
-		<ul class="catalog-sections-list-menu-items">
+    <div class="row">
 			<?php
 			$sectionEdit = CIBlock::GetArrayByID($arParams['IBLOCK_ID'], 'SECTION_EDIT');
 			$sectionDelete = CIBlock::GetArrayByID($arParams['IBLOCK_ID'], 'SECTION_DELETE');
@@ -35,22 +32,16 @@ if ($arResult['SECTIONS_COUNT'] > 0)
 
 			foreach ($arResult['SECTIONS'] as &$section)
 			{
+                $langName = LANGUAGE_ID === "ru" ? 'NAME' : "UF_NAME_" . mb_strtoupper(LANGUAGE_ID);
 				$this->addEditAction($section['ID'], $section['EDIT_LINK'], $sectionEdit);
 				$this->addDeleteAction($section['ID'], $section['DELETE_LINK'], $sectionDelete, $sectionDeleteParams);
 				?>
-				<li class="catalog-sections-list-menu-item nav-item" id="<?=$this->getEditAreaId($section['ID'])?>">
-					<a href="<?=$section['SECTION_PAGE_URL']?>" class="catalog-sections-list-menu-item-link">
-						<span class="catalog-sections-list-menu-item-text"><?=$section['NAME'] ." <i>".$section['ELEMENT_CNT']. "</i>";?></span>
-						<?php if($arParams['SHOW_ANGLE'] === 'Y'): ?>
-							<span class="catalog-sections-list-menu-item-angle"></span>
-						<?php endif; ?>
-					</a>
-				</li>
+					<!--<a href="<?/*=$section['SECTION_PAGE_URL']*/?>" class="catalog-sections-list-menu-item-link">-->
+                        <div id="<?=$this->getEditAreaId($section['ID'])?>" class="menu_block"><?=$section[$langName];?></div>
 				<?php
 			}
 			unset($section);
 			?>
-		</ul>
 	</div>
 	<?php
 }
