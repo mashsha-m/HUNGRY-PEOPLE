@@ -208,13 +208,19 @@ height: 240px;
 }
 
 #four_block > div {
-	width: 40%; 
+	/*width: 40%; */
 	margin-bottom: 3%;
+}
+
+#pag {
+	display: flex;
+	justify-content: center;
 }
 
 #four_block{
 	width: 100%;
-	height: 747px;
+	height: initial;
+	padding: 5% 0 5% 0;
 }
 
 #one_block{
@@ -535,15 +541,22 @@ color: #333333;
 }
 
 .food > div > div {
-	width: 100%; 
+	width: 100%;
 	display: flex; 
 	justify-content: space-around;
+}
+.food > div > div > div {
+	margin: 0 1% 0 1%;
+}
+
+.color-black {
+	color: black;
+	border-color: black;
 }
 
 .food_block{
 	width: 363px;
 height: 66px;
-
 font-family: Banny;
 font-size: 18px;
 /* or 100% */
@@ -551,6 +564,13 @@ font-size: 18px;
 
 color: #333333;
 
+}
+
+.food_block pre {
+	flex: 1 0;
+	border-bottom: 2px dotted #000;
+	height: 1em;
+	margin: 0 .4em;
 }
 
 #five_block{
@@ -928,3 +948,87 @@ background: rgba(0, 0, 0, 0.9);
 		margin-right: 15px;
 	}
 }
+
+/*
+!* Position the image container (needed to position the left and right arrows) *!
+.n_slider {
+	position: relative;
+}
+
+!* Hide the images by default *!
+.mySlides {
+	display: none;
+}
+
+!* Add a pointer when hovering over the thumbnail images *!
+.n_cursor {
+	cursor: pointer;
+}
+
+!* Next & previous buttons *!
+.n_prev,
+.n_next {
+	cursor: pointer;
+	position: absolute;
+	top: 40%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+!* Position the "next button" to the right *!
+.n_next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+!* On hover, add a black background color with a little bit see-through *!
+.n_prev:hover,
+.n_next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+!* Number text (1/3 etc) *!
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+!* Container for image text *!
+.caption-container {
+	text-align: center;
+	background-color: #222;
+	padding: 2px 16px;
+	color: white;
+}
+
+.slider_row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+!* Six columns side by side *!
+.slider_column {
+	float: left;
+	width: 16.66%;
+}
+
+!* Add a transparency effect for thumnbail images *!
+.demo {
+	opacity: 0.6;
+}
+
+.slider_active,
+.demo:hover {
+	opacity: 1;
+}*/
